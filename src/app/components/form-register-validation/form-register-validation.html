@@ -1,0 +1,47 @@
+
+        <form [formGroup]="formRegisterValidation" (ngSubmit)="onSubmit()" novalidate>
+
+          <div class="row g-3 mb-5">
+            <div class="col-md-6">
+              <label for="nombre" class="form-label fw-semibold">Nombre</label>
+              <input id="nombre" type="text" formControlName="nombre" class="form-control"
+                placeholder="Tu nombre" [class.is-invalid]="isInvalidField('nombre')" />
+              @if (hasError('nombre', 'required')) { <div class="invalid-feedback">El nombre es obligatorio</div> }
+              @if (hasError('nombre', 'minlength')) { <div class="invalid-feedback">Mínimo 2 caracteres</div> }
+              @if (hasError('nombre', 'maxlength')) { <div class="invalid-feedback">Máximo 30 caracteres</div> }
+              @if (hasError('nombre', 'pattern')) { <div class="invalid-feedback">Solo se permiten letras</div> }
+            </div>
+
+            <div class="col-md-6">
+              <label for="apellidos" class="form-label fw-semibold">Apellidos</label>
+              <input id="apellidos" type="text" formControlName="apellidos" class="form-control"
+                placeholder="Tus apellidos" [class.is-invalid]="isInvalidField('apellidos')" />
+              @if (hasError('apellidos', 'required')) { <div class="invalid-feedback">Los apellidos es obligatorios</div> }
+              @if (hasError('apellidos', 'minlength')) { <div class="invalid-feedback">Mínimo 2 caracteres</div> }
+              @if (hasError('apellidos', 'maxlength')) { <div class="invalid-feedback">Máximo 50 caracteres</div> }
+              @if (hasError('apellidos', 'pattern')) { <div class="invalid-feedback">Solo se permiten letras</div> }
+            </div>
+
+             <div class="col-md-6">
+              <label for="telefono" class="form-label fw-semibold">Teléfono móvil</label>
+              <input id="telefono" type="tel" formControlName="telefono" class="form-control"
+                placeholder="+34612345678" [class.is-invalid]="isInvalidField('telefono')" />
+             @if (isInvalidField('telefono')) { <div class="invalid-feedback">El email es obligatorio</div> }
+
+             @if (isInvalidField('telefono')) { <div class="invalid-feedback">Introduce un móvil español válido</div> }
+            </div>
+
+            <div class="col-md-6">
+              <label for="email" class="form-label fw-semibold">Email</label>
+              <input id="email" type="email" formControlName="email" class="form-control"
+                placeholder="correo@ejemplo.com" [class.is-invalid]="isInvalidField('email')" />
+              @if (hasError('email', 'required')) { <div class="invalid-feedback">El email es obligatorio</div> }
+              @if (hasError('email', 'email')) { <div class="invalid-feedback">Formato de email no válido</div> }
+            </div>
+
+         
+
+
+          </div> 
+        </form>
+     

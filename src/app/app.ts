@@ -1,8 +1,8 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { FormRegisterValidation } from './components/form-register-validation/form-register-validation';
 
 @Component({
-  imports: [RouterOutlet],
+  imports: [FormRegisterValidation],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
